@@ -7,6 +7,7 @@ interface CustomInputProps {
   placeholder?: string;
   suffix?: string;
   prefix?: string;
+  className?: string;
 }
 
 const CustomInput: React.FC<CustomInputProps> = ({
@@ -16,9 +17,10 @@ const CustomInput: React.FC<CustomInputProps> = ({
   prefix,
   onChange,
   placeholder,
+  className,
 }) => {
   return (
-    <div className="mb-[2.4rem]">
+    <div className={cn("mb-[2.4rem]", className)}>
       {label.length > 0 && (
         <label
           className="text-preset-4 mb-[1.2rem] block capitalize"

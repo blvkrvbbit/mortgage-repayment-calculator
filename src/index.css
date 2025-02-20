@@ -3,6 +3,7 @@
 
 @theme {
   --color-*: initial;
+  --color-black: #000;
   --color-lime: #d8db2f;
   --color-slate-100: #e4f4fd;
   --color-slate-300: #9abed5;
@@ -17,6 +18,8 @@
   --spacing-200: 1.6rem;
   --spacing-150: 1.2rem;
   --spacing-100: 0.8rem;
+  --breakpoint-*: initial;
+  --breakpoint-tablet: 768px;
 }
 
 html,
@@ -26,6 +29,12 @@ body {
 }
 
 @layer base {
+  @media screen and (min-width: 768px) {
+    html,
+    body {
+      @apply bg-slate-100;
+    }
+  }
 }
 
 @layer components {

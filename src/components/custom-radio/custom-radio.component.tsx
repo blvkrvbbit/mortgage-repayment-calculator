@@ -5,20 +5,22 @@ interface CustomRadioProps {
   options: { label: string; value: string }[];
   value: string;
   onChange: (value: string) => void;
+  className?: string;
 }
 
 const CustomRadio: React.FC<CustomRadioProps> = ({
   options,
   value,
   onChange,
+  className,
 }) => {
   return (
-    <div>
+    <div className={cn("mb-[2.4rem]", className)}>
       {options.map((option) => (
         <label
           className={cn(
             "flex gap-[1.6rem] items-center h-[4.8rem] border px-[2.4rem] rounded-[0.4rem] space-x-2 cursor-pointer focus-within:border-lime",
-            "hover:border-lime mb-[1.2rem]",
+            "hover:border-lime mb-[1.2rem] last-of-type:mb-0",
             value === option.value ? "bg-lime/15 border-lime" : ""
           )}
           key={option.value}

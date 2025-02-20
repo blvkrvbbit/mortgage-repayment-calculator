@@ -55,78 +55,86 @@ const Form = ({ setRepayment }: Props) => {
   };
 
   return (
-    <Container>
+    <Container className="bg-white tablet:rounded-t-[2.4rem] tablet:py-[4rem]">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="mt-[3.2rem] flex flex-col  gap-[0.8rem] mb-[2.4rem]">
+        <div className="mt-[3.2rem] tablet:mt-0 flex flex-col  gap-[0.8rem] mb-[2.4rem] tablet:flex-row tablet:justify-between">
           <h1 className="text-preset-2 text-slate-900 font-bold">
             Mortgage Calculator
           </h1>
           <button
             onClick={resetForm}
-            className="text-slate-700 flex-none w-[6.2rem] text-preset-4 underline"
+            className="text-slate-700 flex-none w-[6.2rem] text-preset-4 underline cursor-pointer"
           >
             Clear All
           </button>
         </div>
-        <Controller
-          name="mortgageAmount"
-          control={control}
-          defaultValue=""
-          render={({ field }) => (
-            <CustomInput
-              label="Mortgage Amount"
-              prefix="£"
-              value={field.value}
-              onChange={field.onChange}
-              placeholder=""
-            />
-          )}
-        />
-        <Controller
-          name="mortgageTerm"
-          control={control}
-          defaultValue=""
-          render={({ field }) => (
-            <CustomInput
-              label="Mortgage Term"
-              suffix="years"
-              value={field.value}
-              onChange={field.onChange}
-              placeholder=""
-            />
-          )}
-        />
-        <Controller
-          name="interestRate"
-          control={control}
-          defaultValue=""
-          render={({ field }) => (
-            <CustomInput
-              label="Interest Rate"
-              suffix="%"
-              value={field.value}
-              onChange={field.onChange}
-              placeholder=""
-            />
-          )}
-        />
-        <Controller
-          name="mortgageType"
-          control={control}
-          render={({ field }) => (
-            <CustomRadio
-              options={[
-                { label: "Repayment", value: "Repayment" },
-                { label: "Interest Rate", value: "Interest Rate" },
-              ]}
-              value={field.value}
-              onChange={field.onChange}
-            />
-          )}
-        />
+        <div className="grid grid-cols-1 tablet:grid-cols-2 gap-x-6">
+          <Controller
+            name="mortgageAmount"
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              <CustomInput
+                label="Mortgage Amount"
+                className="tablet:col-span-2"
+                prefix="£"
+                value={field.value}
+                onChange={field.onChange}
+                placeholder=""
+              />
+            )}
+          />
+          <Controller
+            name="mortgageTerm"
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              <CustomInput
+                label="Mortgage Term"
+                suffix="years"
+                value={field.value}
+                onChange={field.onChange}
+                placeholder=""
+              />
+            )}
+          />
+          <Controller
+            name="interestRate"
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              <CustomInput
+                label="Interest Rate"
+                suffix="%"
+                value={field.value}
+                onChange={field.onChange}
+                placeholder=""
+              />
+            )}
+          />
+          <Controller
+            name="mortgageType"
+            control={control}
+            render={({ field }) => (
+              <CustomRadio
+                className="tablet:col-span-2 tablet:mb-[4rem]"
+                options={[
+                  { label: "Repayment", value: "Repayment" },
+                  { label: "Interest Rate", value: "Interest Rate" },
+                ]}
+                value={field.value}
+                onChange={field.onChange}
+              />
+            )}
+          />
+        </div>
+
         {/* <button type="submit">Submit</button> */}
-        <Button className="w-full cursor-pointer" type="submit">
-          Submit
+        <Button
+          className="w-full cursor-pointer tablet:max-w-[31.4rem]"
+          type="submit"
+        >
+          Calculate Repayments
         </Button>
       </form>
     </Container>
