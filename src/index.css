@@ -20,6 +20,7 @@
   --spacing-100: 0.8rem;
   --breakpoint-*: initial;
   --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1440px;
 }
 
 html,

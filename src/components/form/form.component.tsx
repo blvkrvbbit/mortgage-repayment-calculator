@@ -55,7 +55,7 @@ const Form = ({ setRepayment }: Props) => {
   };
 
   return (
-    <Container className="bg-white tablet:rounded-t-[2.4rem] tablet:py-[4rem]">
+    <Container className="bg-white tablet:rounded-t-[2.4rem] tablet:py-[4rem] desktop:max-w-[50.4rem]">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mt-[3.2rem] tablet:mt-0 flex flex-col  gap-[0.8rem] mb-[2.4rem] tablet:flex-row tablet:justify-between">
           <h1 className="text-preset-2 text-slate-900 font-bold">

@@ -8,7 +8,7 @@ function App() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [repayment, setRepayment] = useState<any>(null);
   return (
-    <Container className="px-0 tablet:max-w-[68.8rem] tablet:mx-auto tablet:my-[4rem]">
+    <Container className="px-0 tablet:max-w-[68.8rem] tablet:mx-auto tablet:my-[4rem] desktop:flex desktop:max-w-[100.8rem] desktop:bg-white">
       <Form setRepayment={setRepayment} />
       <Display repayment={repayment} />
     </Container>
